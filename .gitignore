@@ -9,5 +9,5 @@
 .htaccess
 404.php
 favicon.ico
-index.php
+
 urlrewrite.php
