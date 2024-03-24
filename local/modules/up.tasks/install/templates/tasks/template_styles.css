@@ -1,0 +1,335 @@
+/* comfortaa-300 - cyrillic-ext_latin */
+@font-face {
+    font-display: swap;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 300;
+    src: url('./fonts/comfortaa-v45-cyrillic-ext_latin-300.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/comfortaa-v45-cyrillic-ext_latin-regular.woff2') format('woff2');
+}
+@font-face {
+    font-display: swap;
+    font-family: 'Comfortaa';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./fonts/comfortaa-v45-cyrillic-ext_latin-500.woff2') format('woff2');
+}
+* , button, a, p, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Comfortaa', sans-serif;
+    font-style: normal;
+    font-weight: 300;
+    color: #757575;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+button {
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+body {
+    background-color: rgba(47, 199, 247, 0.7);
+}
+.wrapper {
+    padding: 10px 30px;
+}
+.header {
+    background-color: #fff;
+    border-radius: 30px;
+    margin: 30px;
+}
+
+.header__wrapper {
+    padding: 10px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logoContainer img {
+    display: block;
+    max-width: 50px;
+}
+
+.header__taskContainer {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.header__tasks {
+}
+
+.header__taskCreate {
+    padding: 10px;
+    border-radius: 12px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 102, 161, 1);
+    border: 1px solid rgba(0, 102, 161, 1);
+}
+.header__taskCreate:hover, .header__taskCreate:active {
+    background-color: rgba(0, 102, 161, 0.8);
+    border: 1px solid rgba(0, 102, 161, 0.8);
+    transition: 0.4s;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    transition: box-shadow 0.3s ease;
+}
+
+.card__container:hover {
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.card__description {
+    padding-bottom: 10px;
+}
+
+.card__footer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid #444444;
+    padding-top: 15px;
+}
+
+.card__lastActivity, .card__showDetails {
+    font-weight: 500;
+    text-align: center;
+}
+
+.section__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    grid-auto-rows: 240px;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.pagination__container {
+    display: inline-block;
+}
+
+.pagination__container a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+.pagination__container a.active {
+    background-color: rgba(0, 102, 161, 1);
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination__container a:hover:not(.active) {
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.footer {
+    background-color: #fff;
+    border-radius: 12px;
+}
+
+.footer__content {
+    text-align: center;
+}
+
+@media only screen and (max-width: 1024px) {
+    .section__container {
+        grid-template-columns: 1fr;
+    }
+    .card {
+        width: 100%;
+    }
+}
+
+/*details styles start*/
+.details {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 30px;
+}
+
+.details__container, .details__meta {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.detail__card_header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.detail__card_title {
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.card__fav {
+}
+
+.detail__card_content {
+    padding-right: 50px;
+}
+
+.detail__card_text {
+    line-height: 26px;
+}
+
+.detail__card_priority {
+}
+
+.details__meta {
+    min-width: 240px;
+}
+
+.details__meta p, .details__meta span, .details__meta div {
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.priority span {
+    display: inline-block;
+    padding: 8px;
+    border-radius: 12px;
+    color: #fff;
+    margin-left: 10px;
+}
+
+.detail__card_lastActivity, .detail__card_showDetails {
+    margin-bottom: 10px;
+}
+
+.details__meta_actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.editBtn {
+    background-color: #662d91;
+    padding: 8px 15px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.remove img {
+    display: block;
+    width: 40px;
+}
+
+.edit {
+    background-color: #fff;
+    border-radius: 12px;
+    min-width: 250px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.edit__container {
+    padding-top: 25px;
+    position: relative;
+}
+
+.edit__form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    gap: 12px
+}
+
+.edit__btn {
+    background-color: #568203;
+    padding: 10px 12px;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    font-weight: 500;
+    border-radius: 12px;
+}
+
+#closeEdit {
+    display: block;
+    width: 30px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+}
+
+.dropdown {
+}
+
+.dropdown-menu {
+}
+
+/*edit styles start*/
+.editSection__container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 10px;
+    width: 100%;
+}

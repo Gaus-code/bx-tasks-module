@@ -1,0 +1,13 @@
+/bitrix
+.idea
+/upload
+/local/components
+/local/php_interface
+/local/routes
+/local/templates
+.access.php
+.htaccess
+404.php
+favicon.ico
+index.php
+urlrewrite.php
