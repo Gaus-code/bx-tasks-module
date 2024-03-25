@@ -4,21 +4,21 @@
     font-family: 'Comfortaa';
     font-style: normal;
     font-weight: 300;
-    src: url('./fonts/comfortaa-v45-cyrillic-ext_latin-300.woff2') format('woff2');
+    src: url('./assets/fonts/comfortaa-v45-cyrillic-ext_latin-300.woff2') format('woff2');
 }
 @font-face {
     font-display: swap;
     font-family: 'Comfortaa';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/comfortaa-v45-cyrillic-ext_latin-regular.woff2') format('woff2');
+    src: url('./assets/fonts/comfortaa-v45-cyrillic-ext_latin-regular.woff2') format('woff2');
 }
 @font-face {
     font-display: swap;
     font-family: 'Comfortaa';
     font-style: normal;
     font-weight: 400;
-    src: url('./fonts/comfortaa-v45-cyrillic-ext_latin-500.woff2') format('woff2');
+    src: url('./assets/fonts/comfortaa-v45-cyrillic-ext_latin-500.woff2') format('woff2');
 }
 * , button, a, p, h1, h2, h3, h4, h5, h6 {
     font-family: 'Comfortaa', sans-serif;

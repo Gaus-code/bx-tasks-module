@@ -8,7 +8,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<div class="card__header">
 					<h3 class="card__title">Title</h3>
 					<div class="card__fav">
-						<img src="../../../../../../local/components/up/tasks.list/templates/.default/images/star.svg" alt="add to favourite">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/star.svg" alt="add to favourite">
 					</div>
 				</div>
 				<div class="card__content">
@@ -25,7 +25,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<div class="card__header">
 					<h3 class="card__title">Title</h3>
 					<div class="card__fav">
-						<img src="../../../../../../local/components/up/tasks.list/templates/.default/images/star.svg" alt="add to favourite">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/star.svg" alt="add to favourite">
 					</div>
 				</div>
 				<div class="card__content">
@@ -42,7 +42,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<div class="card__header">
 					<h3 class="card__title">Title</h3>
 					<div class="card__fav">
-						<img src="../../../../../../local/components/up/tasks.list/templates/.default/images/star.svg" alt="add to favourite">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/star.svg" alt="add to favourite">
 					</div>
 				</div>
 				<div class="card__content">
@@ -59,7 +59,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<div class="card__header">
 					<h3 class="card__title">Title</h3>
 					<div class="card__fav">
-						<img src="../../../../../../local/components/up/tasks.list/templates/.default/images/star.svg" alt="add to favourite">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/star.svg" alt="add to favourite">
 					</div>
 				</div>
 				<div class="card__content">
@@ -76,7 +76,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<div class="card__header">
 					<h3 class="card__title">Title</h3>
 					<div class="card__fav">
-						<img src="../../../../../../local/components/up/tasks.list/templates/.default/images/star.svg" alt="add to favourite">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/star.svg" alt="add to favourite">
 					</div>
 				</div>
 				<div class="card__content">
@@ -93,7 +93,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 				<div class="card__header">
 					<h3 class="card__title">Title</h3>
 					<div class="card__fav">
-						<img src="../../../../../../local/components/up/tasks.list/templates/.default/images/star.svg" alt="add to favourite">
+						<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/star.svg" alt="add to favourite">
 					</div>
 				</div>
 				<div class="card__content">

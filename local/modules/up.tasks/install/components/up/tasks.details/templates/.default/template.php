@@ -6,7 +6,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 		<div class="detail__card_header">
 			<h3 class="detail__card_title">Title</h3>
 			<div class="card__fav">
-				<img src="../../../../../../local/components/up/tasks.list/templates/.default/images/star.svg" alt="add to favourite">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/star.svg" alt="add to favourite">
 			</div>
 		</div>
 		<div class="detail__card_content">
@@ -26,7 +26,7 @@ if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 		<div class="details__meta_actions">
 			<a href="/tasks/125/edit/" id="openEdit" class="editBtn" type="button">Edit</a>
 			<button class="remove">
-				<img src="../../../../../../local/components/up/tasks.details/templates/.default/images/bin.svg" alt="remove task">
+				<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/bin.svg" alt="remove task">
 			</button>
 		</div>
 	</div>
