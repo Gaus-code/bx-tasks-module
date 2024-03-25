@@ -3,7 +3,7 @@
 use Bitrix\Main\ModuleManager;
 use Bitrix\Main\Config\Option;
 
-function __projectorMigrate(int $nextVersion, callable $callback)
+function __tasksMigrate(int $nextVersion, callable $callback)
 {
 	global $DB;
 	$moduleId = 'up.tasks';
@@ -26,7 +26,7 @@ function __projectorMigrate(int $nextVersion, callable $callback)
 	}
 }
 
-__projectorMigrate(2, function($updater, $DB)
+__tasksMigrate(2, function($updater, $DB)
 {
 	if ($updater->CanUpdateDatabase() && !$updater->TableExists('up_tasks_comment'))
 	{
@@ -40,5 +40,15 @@ __projectorMigrate(2, function($updater, $DB)
 			PRIMARY KEY (ID),
 			FOREIGN KEY (TASK_ID) REFERENCES up_tasks_task(ID) ON DELETE CASCADE
 		);');
+	}
+});
+
+__tasksMigrate(3, function($updater, $DB)
+{
+	if ($updater->CanUpdateDatabase() && !$updater->TableExists('up_tasks_task'))
+	{
+		$DB->query('ALTER TABLE up_tasks_task
+		ADD DEADLINE DATETIME;
+		');
 	}
 });
