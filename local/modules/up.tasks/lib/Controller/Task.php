@@ -3,7 +3,7 @@ namespace Up\Tasks\Controller;
 
 use Bitrix\Main\Engine;
 use Bitrix\Main\Error;
-use Up\Tasks\Project\Repository;
+use Up\Tasks\Task\Repository;
 
 class Task extends Engine\Controller
 {
@@ -20,7 +20,7 @@ class Task extends Engine\Controller
 		$taskList = Repository::getPage(self::PROJECT_PER_PAGE, $pageNumber);
 		return [
 			'pageNumber' => $pageNumber,
-			'projectList' => $taskList,
+			'taskList' => $taskList,
 		];
 	}
 

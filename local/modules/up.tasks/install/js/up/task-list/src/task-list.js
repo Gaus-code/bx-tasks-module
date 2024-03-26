@@ -1,4 +1,4 @@
-import {Type, Tag, Loc} from 'main.core';
+import {Type, Tag} from 'main.core';
 
 export class TaskList
 {
@@ -18,7 +18,7 @@ export class TaskList
 			throw new Error(`TaskList: element with id "${this.rootNodeId}" not found`);
 		}
 
-		this.projectList = [];
+		this.taskList = [];
 		this.reload();
 
 		let TaskList = this;
@@ -35,8 +35,8 @@ export class TaskList
 	reload()
 	{
 		this.loadList()
-			.then(projectList => {
-				this.projectList = projectList;
+			.then(taskList => {
+				this.taskList = taskList;
 				this.render();
 			});
 	}
@@ -50,9 +50,9 @@ export class TaskList
 					data: {}
 				})
 				.then((response) => {
-					const projectList = response.data.projectList;
+					const taskList = response.data.taskList;
 
-					resolve(projectList);
+					resolve(taskList);
 				})
 				.catch((error) => {
 						console.error(error);
@@ -74,26 +74,26 @@ export class TaskList
 		this.rootNode.innerHTML = '';
 		const moviesContainerNode = Tag.render`<div class="section__container wrapper"></div>`;
 
-		this.projectList.forEach(projectData => {
-			let formattedDeadline = this.formatDate(projectData.DEADLINE);
-			let formattedDate = this.formatDate(projectData.UPDATED_AT);
+		this.taskList.forEach(taskData => {
+			let formattedDeadline = this.formatDate(taskData.DEADLINE);
+			let formattedDate = this.formatDate(taskData.UPDATED_AT);
 			const projectNode = Tag.render`
-				<div class="card" id="${projectData['ID']}">
+				<div class="card" id="${taskData['ID']}">
 					<div class="card__container">
 						<div class="card__header">
-							<h3 class="card__title">${projectData.TITLE}</h3>
+							<h3 class="card__title">${taskData.TITLE}</h3>
 							<div class="card__fav">
 								*
 							</div>
 						</div>
 						<div class="card__content">
-							<p class="card__description">${projectData.DESCRIPTION}</p>
+							<p class="card__description">${taskData.DESCRIPTION}</p>
 						</div>
 						<div class="card__footer">
 							<div class="card__lastActivity">Last Activity: <br>${formattedDate}</div>
 							<div class="card__showDetails">Deadline: <br> ${formattedDeadline}</div>
 						</div>
-						<button class="deleteBtn" id="${projectData['ID']}">delete task</button>
+						<button class="deleteBtn" id="${taskData['ID']}">delete task</button>
 					</div>
 				</div>
 			`;

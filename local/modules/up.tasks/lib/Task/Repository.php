@@ -1,5 +1,5 @@
 <?php
-namespace Up\Tasks\Project;
+namespace Up\Tasks\Task;
 
 use Up\Tasks\Model\TaskTable;
 
