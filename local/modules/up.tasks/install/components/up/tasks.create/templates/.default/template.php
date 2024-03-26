@@ -6,7 +6,7 @@
 <section class="create wrapper">
 	<form action="<?=POST_FORM_ACTION_URI?>" method="post" class="create__form">
 		<label for="title">Название:</label>
-		<input id="title" type="text" name="TITLE" required>
+		<input id="title" type="text" name="TITTLE" required>
 		<label for="description">Описание:</label>
 		<textarea id="description" name="DESCRIPTION"></textarea>
 		<fieldset>
@@ -29,6 +29,6 @@
 				</select>
 			</div>
 		</fieldset>
-		<button type="submit">Send</button>
+		<button class="createBtn" type="submit">Send</button>
 	</form>
 </section>

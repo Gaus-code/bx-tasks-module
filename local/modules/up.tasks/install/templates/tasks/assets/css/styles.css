@@ -333,3 +333,23 @@ body {
     padding: 10px;
     width: 100%;
 }
+
+.create__form {
+    display: flex;
+    max-width: 50%;
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.deleteBtn, .createBtn {
+    background-color: #662d91;
+    padding: 10px;
+    margin: 10px auto 0;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 12px;
+    color: #fff;
+}

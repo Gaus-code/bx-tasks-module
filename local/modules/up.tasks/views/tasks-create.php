@@ -4,4 +4,4 @@ $APPLICATION->SetTitle("Task create");
 
 $APPLICATION->IncludeComponent('up:tasks.create', '', []);
 
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");
+

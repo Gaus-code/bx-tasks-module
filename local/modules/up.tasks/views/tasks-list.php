@@ -6,4 +6,3 @@ $APPLICATION->IncludeComponent('up:tasks.list', '', [
 	'DATE_FORMAT' => 'd.M H:i',
 ]);
 
-require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/footer.php");

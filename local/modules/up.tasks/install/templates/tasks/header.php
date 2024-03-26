@@ -23,7 +23,6 @@
 			<img src="<?= SITE_TEMPLATE_PATH ?>/assets/images/bitrix24.svg" alt="logo">
 		</a>
 		<div class="header__taskContainer">
-			<p class="header__tasks">Total Tasks:233</p>
 			<a href="/tasks/create/" class="header__taskCreate" type="button">Create New</a>
 		</div>
 	</div>

@@ -2,7 +2,6 @@
 
 if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 
-var_dump($taskList);
 ?>
 <section class="details wrapper">
 	<div class="details__container">

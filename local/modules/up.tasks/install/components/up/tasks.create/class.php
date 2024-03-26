@@ -48,19 +48,19 @@ class TasksCreateComponent extends CBitrixComponent
 	{
 		$task = Context::getCurrent()->getRequest()->getPostList()->toArray();
 
-		if (!trim($task['TASK']) || !trim($task['RESPONSIBLE']) || !trim($task['PRIORITY']))
+		if (!trim($task['TITTLE']) || !trim($task['RESPONSIBLE']) || !trim($task['PRIORITY']))
 		{
-			throw new Exception('All fields must be hidden');
+			throw new Exception('All fields must be filled');
 		}
 
 		$responsibleId = (int)$task['RESPONSIBLE'];
-		$priorityID = (int)$task['PRIORITY'];
+		$priorityId = (int)$task['PRIORITY'];
 
 		$result = TaskTable::add([
-			'TITTLE' => $task['TITTLE'],
+			'TITLE' => $task['TITTLE'],
 			'DESCRIPTION' => $task['DESCRIPTION'],
 			'USER_ID' => $responsibleId,
-			'PRIORITY_ID' => $priorityID,
+			'PRIORITY_ID' => $priorityId,
 			'STATUS_ID' => 1
 		]);
 

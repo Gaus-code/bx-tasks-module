@@ -93,7 +93,7 @@ export class TaskList
 							<div class="card__lastActivity">Last Activity: <br>${formattedDate}</div>
 							<div class="card__showDetails">Deadline: <br> ${formattedDeadline}</div>
 						</div>
-						<button id="${projectData['ID']}">delete task</button>
+						<button class="deleteBtn" id="${projectData['ID']}">delete task</button>
 					</div>
 				</div>
 			`;
