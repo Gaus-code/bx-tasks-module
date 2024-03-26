@@ -40,23 +40,10 @@ CREATE TABLE IF NOT EXISTS up_tasks_task
     CREATED_AT   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     UPDATED_AT   DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
     COMPLETED_AT DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    DEADLINE     DATETIME,
     PRIORITY_ID  INT          NOT NULL DEFAULT 1,
     STATUS_ID    INT          NOT NULL DEFAULT 1,
-    PRIMARY KEY (ID),
-    FOREIGN KEY (USER_ID) REFERENCES up_tasks_user (ID) ON DELETE CASCADE,
-    FOREIGN KEY (PRIORITY_ID) REFERENCES up_tasks_priority (ID) ON DELETE RESTRICT,
-    FOREIGN KEY (STATUS_ID) REFERENCES up_tasks_status (ID) ON DELETE RESTRICT
-);
-
-CREATE TABLE IF NOT EXISTS up_tasks_comment
-(
-    ID         INT      NOT NULL AUTO_INCREMENT,
-    TASK_ID    INT      NOT NULL,
-    CREATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    UPDATED_AT DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    CONTENT    TEXT     NOT NULL,
-    PRIMARY KEY (ID),
-    FOREIGN KEY (TASK_ID) REFERENCES up_tasks_task (ID) ON DELETE CASCADE
+    PRIMARY KEY (ID)
 );
 
 INSERT INTO up_tasks_user_role
@@ -92,6 +79,3 @@ VALUES
     (1, 1, 'THE TITTLEST OF THE TITTLE', 'Возможно это самое важное описание в вашей жизни, а возможно нет. Я просто не знаю, что сюда вписать и не понимаю, как автоматически делать прикольные вставки для заполнения таблицы. Может, это и будет следующая идея для проекта, пока не знаю, посмотрим :). Спасибо, что дочитали это описание до конца, хорошего вам дня/вечера/утра', 1, 1, CURRENT_TIMESTAMP),
     (2, 2, 'THE TITTLEST OF THE TITTLE', 'Возможно это самое важное описание в вашей жизни, а возможно нет. Я просто не знаю, что сюда вписать и не понимаю, как автоматически делать прикольные вставки для заполнения таблицы. Может, это и будет следующая идея для проекта, пока не знаю, посмотрим :). Спасибо, что дочитали это описание до конца, хорошего вам дня/вечера/утра', 2, 2, CURRENT_TIMESTAMP),
     (3, 3, 'THE TITTLEST OF THE TITTLE', 'Возможно это самое важное описание в вашей жизни, а возможно нет. Спасибо, что дочитали это описание до конца, хорошего вам дня/вечера/утра', 1, 1, CURRENT_TIMESTAMP);
-
-ALTER TABLE up_tasks_task
-    ADD DEADLINE DATETIME;

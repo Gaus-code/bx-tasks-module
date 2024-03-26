@@ -42,13 +42,3 @@ __tasksMigrate(2, function($updater, $DB)
 		);');
 	}
 });
-
-__tasksMigrate(3, function($updater, $DB)
-{
-	if ($updater->CanUpdateDatabase() && !$updater->TableExists('up_tasks_task'))
-	{
-		$DB->query('ALTER TABLE up_tasks_task
-		ADD DEADLINE DATETIME;
-		');
-	}
-});

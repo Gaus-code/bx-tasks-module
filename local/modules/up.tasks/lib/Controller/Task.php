@@ -23,4 +23,20 @@ class Task extends Engine\Controller
 			'projectList' => $taskList,
 		];
 	}
+
+	public function deleteTaskAction(int $taskId): ?bool
+	{
+		try
+		{
+			Repository::deleteTask($taskId);
+
+			return true;
+		}
+		catch (\Exception $error)
+		{
+			$this->addError(new Error($error->getMessage()));
+
+			return null;
+		}
+	}
 }

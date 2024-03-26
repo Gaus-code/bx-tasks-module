@@ -21,8 +21,5 @@ return function (RoutingConfigurator $routes) {
 		// delete project
 	});
 
-	$routes->post('/tasks/create/status/', function () {
-		// handle adding task
-		var_dump($_REQUEST);die;
-	});
+	$routes->post('/tasks/create/', new PublicPageController('/local/modules/up.tasks/views/task-create.php'));
 };

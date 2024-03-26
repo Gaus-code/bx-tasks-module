@@ -1,27 +1,34 @@
+<?php
+/**
+ * @var array $arResult
+ */
+?>
 <section class="create wrapper">
-	<form action="/tasks/create/status/" method="post" class="create__form">
-		<label for="title">Title:</label>
-		<input id="title" type="text" name="title">
-		<label for="description">Description:</label>
-		<textarea id="description" name="description"></textarea>
+	<form action="<?=POST_FORM_ACTION_URI?>" method="post" class="create__form">
+		<label for="title">Название:</label>
+		<input id="title" type="text" name="TITLE" required>
+		<label for="description">Описание:</label>
+		<textarea id="description" name="DESCRIPTION"></textarea>
 		<fieldset>
-			<legend>Choose task priority:</legend>
-
-			<div>
-				<input type="radio" id="priority" name="priority" value="high" checked />
-				<label for="high">High</label>
+			<legend>Выберите приоритетность:</legend>
+			<div class="select" id="select-priority">
+				<select name="PRIORITY">
+					<?php foreach ($arResult['PRIORITY'] as $priority):?>
+						<option value="<?= $priority['ID'] ?>"><?= $priority['TITLE'] ?></option>
+					<?php endforeach; ?>
+				</select>
 			</div>
-
-			<div>
-				<input type="radio" id="priority" name="priority" value="middle" />
-				<label for="middle">Middle</label>
-			</div>
-
-			<div>
-				<input type="radio" id="priority" name="priority" value="low" />
-				<label for="low">Low</label>
-			</div>
-			<button type="submit">Send</button>
 		</fieldset>
+		<fieldset>
+			<legend>Выберите отвественного:</legend>
+			<div class="select" id="select-responsible">
+				<select name="RESPONSIBLE">
+					<?php foreach ($arResult['RESPONSIBLE'] as $responsible):?>
+						<option value="<?= $responsible['ID'] ?>"><?= $responsible['NAME'] . ' ' . $responsible['SURNAME'] ?></option>
+					<?php endforeach; ?>
+				</select>
+			</div>
+		</fieldset>
+		<button type="submit">Send</button>
 	</form>
 </section>

@@ -2,9 +2,8 @@ import {Type, Tag, Loc} from 'main.core';
 
 export class TaskList
 {
-	constructor(options = {name: 'TaskList'})
+	constructor(options = {})
 	{
-		this.name = options.name;
 		if (Type.isStringFilled(options.rootNodeId))
 		{
 			this.rootNodeId = options.rootNodeId;
@@ -21,6 +20,16 @@ export class TaskList
 
 		this.projectList = [];
 		this.reload();
+
+		let TaskList = this;
+		document.addEventListener("click", function(event) {
+			if(event.target.matches('button') && null !== event.target.closest('.card__container')) {
+				let taskId = event.target.id;
+				TaskList.deleteTask(taskId);
+				let card = event.target.closest('.card__container');
+				card.remove();
+			}
+		});
 	}
 
 	reload()
@@ -52,14 +61,24 @@ export class TaskList
 		});
 	}
 
+	formatDate(dateString) {
+		const updateDate = new Date(dateString);
+		const day = updateDate.getDate();
+		const month = updateDate.getMonth() + 1;
+		const hours = updateDate.getHours();
+		const minutes = updateDate.getMinutes();
+		return `${day}.${month} ${hours}:${minutes}`;
+	}
 	render()
 	{
 		this.rootNode.innerHTML = '';
 		const moviesContainerNode = Tag.render`<div class="section__container wrapper"></div>`;
 
 		this.projectList.forEach(projectData => {
+			let formattedDeadline = this.formatDate(projectData.DEADLINE);
+			let formattedDate = this.formatDate(projectData.UPDATED_AT);
 			const projectNode = Tag.render`
-				<a href="/tasks/${projectData.ID}/" class="card">
+				<div class="card" id="${projectData['ID']}">
 					<div class="card__container">
 						<div class="card__header">
 							<h3 class="card__title">${projectData.TITLE}</h3>
@@ -71,28 +90,34 @@ export class TaskList
 							<p class="card__description">${projectData.DESCRIPTION}</p>
 						</div>
 						<div class="card__footer">
-							<div class="card__lastActivity">Last Activity <br>${projectData.UPDATED_AT}</div>
-							<div class="card__showDetails">Deadline <br> ${projectData.DEADLINE}</div>
+							<div class="card__lastActivity">Last Activity: <br>${formattedDate}</div>
+							<div class="card__showDetails">Deadline: <br> ${formattedDeadline}</div>
 						</div>
+						<button id="${projectData['ID']}">delete task</button>
 					</div>
-				</a>
+				</div>
 			`;
-
 			moviesContainerNode.appendChild(projectNode);
 		});
 
 		this.rootNode.appendChild(moviesContainerNode);
 	}
-	setName(name)
+	deleteTask(taskId)
 	{
-		if (Type.isString(name))
-		{
-			this.name = name;
-		}
-	}
-
-	getName()
-	{
-		return this.name;
+		return new Promise((resolve, reject) => {
+			BX.ajax.runAction(
+				'up:tasks.task.deleteTask',
+				{data: {
+						taskId: Number(taskId),
+					},
+				})
+				.then((response) => {
+					console.log(response);
+				})
+				.catch((error) => {
+					reject(error);
+				})
+			;
+		});
 	}
 }

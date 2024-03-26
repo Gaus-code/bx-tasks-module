@@ -30,4 +30,16 @@ class Repository
 
 		return $taskList;
 	}
+
+	public static function deleteTask(int $taskId): bool
+	{
+		$result = TaskTable::delete($taskId);
+
+		if (!$result->isSuccess())
+		{
+			throw new \Exception($result->getErrors());
+		}
+
+		return true;
+	}
 }
