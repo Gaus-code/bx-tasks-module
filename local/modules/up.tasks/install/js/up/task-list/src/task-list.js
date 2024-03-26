@@ -1,4 +1,4 @@
-import {Type, Tag} from 'main.core';
+import {Type, Tag, Loc} from 'main.core';
 
 export class TaskList
 {
@@ -90,10 +90,16 @@ export class TaskList
 							<p class="card__description">${taskData.DESCRIPTION}</p>
 						</div>
 						<div class="card__footer">
-							<div class="card__lastActivity">Last Activity: <br>${formattedDate}</div>
-							<div class="card__showDetails">Deadline: <br> ${formattedDeadline}</div>
+							<div class="card__lastActivity">
+								${Loc.getMessage('UP_TASKS_TASK_LIST_LAST_ACTIVITY')}: 
+								<br>${formattedDate}
+							</div>
+							<div class="card__showDetails">
+								${Loc.getMessage('UP_TASKS_TASK_LIST_DEADLINE')}:
+								<br>${formattedDeadline}
+							</div>
 						</div>
-						<button class="deleteBtn" id="${taskData['ID']}">delete task</button>
+						<button class="deleteBtn" id="${taskData['ID']}">удалить задачу</button>
 					</div>
 				</div>
 			`;

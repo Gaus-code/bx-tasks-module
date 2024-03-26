@@ -29,6 +29,6 @@
 				</select>
 			</div>
 		</fieldset>
-		<button class="createBtn" type="submit">Send</button>
+		<button class="createBtn" type="submit">Отправить</button>
 	</form>
 </section>
